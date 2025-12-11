@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cknoufl6p5uqc"
-path="res://.godot/imported/stone_pink_variant.png-e5ed5df92d8be4d94e4f191bb18efe3b.ctex"
+uid="uid://coqdv2a1560kv"
+path="res://.godot/imported/stone_pink.png-2322111114ace0d18b3e6144a29e9ca8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/stone_pink_variant.png"
-dest_files=["res://.godot/imported/stone_pink_variant.png-e5ed5df92d8be4d94e4f191bb18efe3b.ctex"]
+source_file="res://assets/Tilesets/stone_pink.png"
+dest_files=["res://.godot/imported/stone_pink.png-2322111114ace0d18b3e6144a29e9ca8.ctex"]
 
 [params]
 

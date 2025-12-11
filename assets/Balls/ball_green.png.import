@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l1o3sxmlriod"
-path="res://.godot/imported/Green_to_Red_Color_Bar.png-9a41dafc4b978b9ac5a68b6382710ee6.ctex"
+uid="uid://b64acicp3x02p"
+path="res://.godot/imported/ball_green.png-73e5f77bbcfebbb6fa9e09d6bd80a711.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Green_to_Red_Color_Bar.png"
-dest_files=["res://.godot/imported/Green_to_Red_Color_Bar.png-9a41dafc4b978b9ac5a68b6382710ee6.ctex"]
+source_file="res://assets/Balls/ball_green.png"
+dest_files=["res://.godot/imported/ball_green.png-73e5f77bbcfebbb6fa9e09d6bd80a711.ctex"]
 
 [params]
 

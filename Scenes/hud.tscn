@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://bvqqigt8gtovs"]
 
 [ext_resource type="Script" path="res://Scenes/hud.gd" id="1_thibm"]
-[ext_resource type="Texture2D" uid="uid://dck8p7je74kye" path="res://assets/Icons/restart.svg" id="2_gk1vd"]
-[ext_resource type="Texture2D" uid="uid://2rr11euwnbjo" path="res://home_192dp_9DC384_FILL0_wght400_GRAD0_opsz48.svg" id="3_cydb7"]
-[ext_resource type="Texture2D" uid="uid://tlhdrytq6yu8" path="res://assets/Icons/arrow_forward.svg" id="4_4ow5g"]
+[ext_resource type="Texture2D" uid="uid://dck8p7je74kye" path="res://assets/Icons/restart.svg" id="2_iyvhe"]
+[ext_resource type="Texture2D" uid="uid://2rr11euwnbjo" path="res://assets/Icons/home_192dp_9DC384_FILL0_wght400_GRAD0_opsz48.svg" id="3_wa4ww"]
+[ext_resource type="Texture2D" uid="uid://tlhdrytq6yu8" path="res://assets/Icons/arrow_forward.svg" id="4_1jpqe"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_vq87w"]
 font_size = 100
@@ -92,21 +92,21 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 4
-icon = ExtResource("2_gk1vd")
+icon = ExtResource("2_iyvhe")
 icon_alignment = 1
 
 [node name="Home" type="Button" parent="Background/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-icon = ExtResource("3_cydb7")
+icon = ExtResource("3_wa4ww")
 icon_alignment = 1
 
 [node name="Forward" type="Button" parent="Background/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-icon = ExtResource("4_4ow5g")
+icon = ExtResource("4_1jpqe")
 icon_alignment = 1
 
 [connection signal="pressed" from="Background/HBoxContainer/Restart" to="." method="_on_restart_pressed"]

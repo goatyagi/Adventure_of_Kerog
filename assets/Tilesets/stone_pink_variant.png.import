@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5qklrocd4us7"
-path="res://.godot/imported/bar_progress.png-89a950561e4085a962c3942932c4ad99.ctex"
+uid="uid://cknoufl6p5uqc"
+path="res://.godot/imported/stone_pink_variant.png-2855a67cf38d226cb99ea7913094b34c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/texture_prgress/bar_progress.png"
-dest_files=["res://.godot/imported/bar_progress.png-89a950561e4085a962c3942932c4ad99.ctex"]
+source_file="res://assets/Tilesets/stone_pink_variant.png"
+dest_files=["res://.godot/imported/stone_pink_variant.png-2855a67cf38d226cb99ea7913094b34c.ctex"]
 
 [params]
 

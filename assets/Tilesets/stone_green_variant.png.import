@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2rr11euwnbjo"
-path="res://.godot/imported/home_192dp_9DC384_FILL0_wght400_GRAD0_opsz48.svg-e93c3b774a38ae73e682a7f4a846e777.ctex"
+uid="uid://2kfp7lckt7be"
+path="res://.godot/imported/stone_green_variant.png-fee0b841e5f049352ce4cda957481812.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://home_192dp_9DC384_FILL0_wght400_GRAD0_opsz48.svg"
-dest_files=["res://.godot/imported/home_192dp_9DC384_FILL0_wght400_GRAD0_opsz48.svg-e93c3b774a38ae73e682a7f4a846e777.ctex"]
+source_file="res://assets/Tilesets/stone_green_variant.png"
+dest_files=["res://.godot/imported/stone_green_variant.png-fee0b841e5f049352ce4cda957481812.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false
