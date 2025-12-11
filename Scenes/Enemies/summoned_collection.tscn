@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://qw2upoe8v7bh"]
+
+[ext_resource type="Script" path="res://Scenes/Enemies/summoned_collection.gd" id="1_ox7n4"]
+
+[node name="SummonedCollection" type="Node2D"]
+script = ExtResource("1_ox7n4")

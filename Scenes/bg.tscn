@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn16yhug7ohrn"]
+
+[ext_resource type="Script" path="res://Scenes/background.gd" id="1_0qwo3"]
+[ext_resource type="Texture2D" uid="uid://bnt5gqx57xd52" path="res://assets/Background/ドット絵29枚/草原・ピクセルげーむ/grassland-dot2.jpg" id="2_dqlqy"]
+
+[node name="BG" type="ParallaxBackground"]
+script = ExtResource("1_0qwo3")
+bg_texture = ExtResource("2_dqlqy")
+scroll_speed = 0
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(960, 540)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxLayer"]
+texture_repeat = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_dqlqy")
+centered = false
+region_enabled = true
+region_rect = Rect2(0, 0, 1920, 1080)

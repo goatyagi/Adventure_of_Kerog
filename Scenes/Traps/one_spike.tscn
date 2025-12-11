@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0asbwtkurbrb"]
+
+[ext_resource type="Texture2D" uid="uid://0frnla4diebu" path="res://assets/Chara/Idle.png" id="1_8fqny"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f46td"]
+size = Vector2(15, 7)
+
+[node name="OneSpike" type="Area2D" groups=["trap"]]
+collision_layer = 4
+collision_mask = 24
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8fqny")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 4.5)
+shape = SubResource("RectangleShape2D_f46td")

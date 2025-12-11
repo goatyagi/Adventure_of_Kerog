@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cl16uldp83t"]
+
+[ext_resource type="Texture2D" uid="uid://cx8eo86ghloib" path="res://assets/BaseAssets/Traps/Blocks/Idle.png" id="1_vs7la"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bubr"]
+size = Vector2(16, 16)
+
+[node name="block" type="RigidBody2D"]
+gravity_scale = 0.0
+freeze = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6bubr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_vs7la")

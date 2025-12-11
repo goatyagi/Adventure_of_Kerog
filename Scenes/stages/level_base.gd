@@ -1,0 +1,61 @@
+extends Node2D
+
+class_name level_base
+
+@onready var player: Player = self.find_child("Player")
+@onready var player_2: Player_2 = self.find_child("Player2")
+@onready var camera: Camera2D = self.find_child("Camera")
+
+var pos_camera
+var pos_player
+var pos_player_2
+var distance
+var offset_y_1 = 0
+var offset_y_2 = 0
+var height_1: int = 0
+var height_2: int = 0
+
+enum CAMERA_MODE {
+	GREEN,
+	PINK,
+}
+
+var mode: CAMERA_MODE = CAMERA_MODE.GREEN
+
+func _ready() -> void:
+	get_tree().paused = false # ゲームを開始する際には一時停止を解除
+	pos_camera = camera.position
+	pos_player = player.position
+	distance = pos_camera.x - pos_player.x
+	
+func _process(_delta):
+	if player == null:
+		player = get_tree().get_first_node_in_group("player")
+	if player_2 == null:
+		player_2 = get_tree().get_first_node_in_group("player_2")
+		
+	if Input.is_action_just_pressed("camera_mode_change"):
+		change_mode(mode)
+			
+	if (mode == CAMERA_MODE.GREEN and player != null):
+		check_height()
+		camera.position.x = player.position.x + distance
+		camera.position.y = pos_camera.y + offset_y_1
+	elif (mode == CAMERA_MODE.PINK and player_2 != null):
+		camera.position.x = player_2.position.x + distance
+		camera.position.y = pos_camera.y + offset_y_2
+	
+func change_mode(current_mode):
+	if (current_mode == CAMERA_MODE.GREEN):
+		mode = CAMERA_MODE.PINK
+	elif (current_mode == CAMERA_MODE.PINK):
+		mode = CAMERA_MODE.GREEN
+
+	
+func check_height():
+	if mode == CAMERA_MODE.GREEN:
+		height_1 = (int)(player.position.y / (-360))
+		offset_y_1 = height_1 * (-360)
+	elif mode == CAMERA_MODE.PINK:
+		height_2 = (int)(player_2.position.y / (-360))
+		offset_y_2 = height_2 * (-360)

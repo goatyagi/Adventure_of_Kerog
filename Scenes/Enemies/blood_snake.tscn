@@ -1,0 +1,152 @@
+[gd_scene load_steps=16 format=3 uid="uid://cs46tw2vugsnt"]
+
+[ext_resource type="Texture2D" uid="uid://gt6ya3s1y0o2" path="res://assets/Akamamusyu/Fight1.png" id="1_58tbc"]
+[ext_resource type="Script" path="res://Scenes/Enemies/blood_snake.gd" id="1_huvil"]
+[ext_resource type="PackedScene" uid="uid://yhw77wi6wbt1" path="res://Scenes/Enemies/ball.tscn" id="2_0cpwj"]
+[ext_resource type="Texture2D" uid="uid://mjolbms8cdsx" path="res://assets/Akamamusyu/Fight2.png" id="2_tj7wx"]
+[ext_resource type="Texture2D" uid="uid://5l12hgdw0l2f" path="res://assets/Akamamusyu/Fight3.png" id="3_6g7ls"]
+[ext_resource type="Texture2D" uid="uid://bpc82dbxwyrks" path="res://assets/Akamamusyu/Fight4.png" id="4_w84n2"]
+[ext_resource type="Texture2D" uid="uid://dnch85x1sthv0" path="res://assets/Akamamusyu/Idlex1.png" id="5_xyvjh"]
+[ext_resource type="Texture2D" uid="uid://2foifa57dnbd" path="res://assets/Akamamusyu/Idlex2.png" id="6_hht6e"]
+[ext_resource type="Texture2D" uid="uid://c4i2glb4tj17m" path="res://assets/Akamamusyu/Idlex3.png" id="7_u7juh"]
+[ext_resource type="Texture2D" uid="uid://b81w1brlxht7h" path="res://assets/Akamamusyu/Idlex4.png" id="8_rwjqb"]
+[ext_resource type="Texture2D" uid="uid://cokqjlo2odo8k" path="res://assets/Akamamusyu/Samon2.png" id="9_eyvth"]
+[ext_resource type="Texture2D" uid="uid://c4qn5pedfqjwi" path="res://assets/Akamamusyu/Samon.png" id="9_jiueu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y0vd7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_58tbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tj7wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6g7ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w84n2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6g7ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tj7wx")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6g7ls")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_w84n2")
+}],
+"loop": true,
+"name": &"attack2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_xyvjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hht6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u7juh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rwjqb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_u7juh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hht6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xyvjh")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_58tbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tj7wx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eyvth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_jiueu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_eyvth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_tj7wx")
+}],
+"loop": false,
+"name": &"summon",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0ei2d"]
+size = Vector2(664.75, 324)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xro1u"]
+radius = 160.0
+height = 634.0
+
+[node name="BloodSnake" type="CharacterBody2D"]
+position = Vector2(200, 1)
+scale = Vector2(0.2, 0.2)
+collision_layer = 4
+script = ExtResource("1_huvil")
+duration_time = 2
+back_height = 500
+pos_attack2 = Vector2(100, 0)
+
+[node name="ball" parent="." instance=ExtResource("2_0cpwj")]
+position = Vector2(610, 565)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-12, -3)
+sprite_frames = SubResource("SpriteFrames_y0vd7")
+animation = &"idle"
+frame_progress = 0.936226
+
+[node name="ChangeStateTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="SummonPoint" type="Marker2D" parent="."]
+position = Vector2(-245, 770)
+
+[node name="Collision_for_body" type="Area2D" parent="." groups=["trap"]]
+position = Vector2(465, 724)
+
+[node name="Collision_for_body" type="CollisionShape2D" parent="Collision_for_body"]
+shape = SubResource("RectangleShape2D_0ei2d")
+
+[node name="Collision_for_head" type="Area2D" parent="." groups=["trap"]]
+position = Vector2(340, 430)
+
+[node name="Collision_for_head" type="CollisionShape2D" parent="Collision_for_head"]
+shape = SubResource("CapsuleShape2D_xro1u")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(465, 724)
+shape = SubResource("RectangleShape2D_0ei2d")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="timeout" from="ChangeStateTimer" to="." method="_on_change_state_timer_timeout"]
