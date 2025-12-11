@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://lm7fpc016ti"]
+
+[ext_resource type="Texture2D" uid="uid://etvlmqelshwq" path="res://assets/BaseAssets/Traps/Fan/On (24x8).png" id="1_74qw6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_462kq"]
+size = Vector2(19, 7)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0leqy"]
+atlas = ExtResource("1_74qw6")
+region = Rect2(24, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vja0r"]
+atlas = ExtResource("1_74qw6")
+region = Rect2(0, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cg3vx"]
+atlas = ExtResource("1_74qw6")
+region = Rect2(48, 0, 24, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7mgo"]
+atlas = ExtResource("1_74qw6")
+region = Rect2(72, 0, 24, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5xklw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0leqy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vja0r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cg3vx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7mgo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex1ig"]
+size = Vector2(16.5, 61)
+
+[node name="Fan" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_462kq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_5xklw")
+
+[node name="ReverseArea" type="Area2D" parent="."]
+gravity_space_override = 3
+gravity = -3214.18
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ReverseArea"]
+position = Vector2(1, -37)
+shape = SubResource("RectangleShape2D_ex1ig")

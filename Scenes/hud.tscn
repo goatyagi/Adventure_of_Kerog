@@ -1,0 +1,114 @@
+[gd_scene load_steps=10 format=3 uid="uid://bvqqigt8gtovs"]
+
+[ext_resource type="Script" path="res://Scenes/hud.gd" id="1_thibm"]
+[ext_resource type="Texture2D" uid="uid://dck8p7je74kye" path="res://assets/Icons/restart.svg" id="2_gk1vd"]
+[ext_resource type="Texture2D" uid="uid://2rr11euwnbjo" path="res://home_192dp_9DC384_FILL0_wght400_GRAD0_opsz48.svg" id="3_cydb7"]
+[ext_resource type="Texture2D" uid="uid://tlhdrytq6yu8" path="res://assets/Icons/arrow_forward.svg" id="4_4ow5g"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_vq87w"]
+font_size = 100
+font_color = Color(1, 1, 0, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xooe0"]
+font_size = 40
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8233w"]
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_88eaj"]
+bg_color = Color(0.419813, 0.419813, 0.419813, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="Theme" id="Theme_l7ner"]
+Button/styles/hover = SubResource("StyleBoxFlat_8233w")
+Button/styles/normal = SubResource("StyleBoxFlat_88eaj")
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_thibm")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.392157)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Background/VBoxContainer"]
+layout_mode = 2
+text = "Congraturations!"
+label_settings = SubResource("LabelSettings_vq87w")
+
+[node name="Label2" type="Label" parent="Background/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press Space to Menu"
+label_settings = SubResource("LabelSettings_xooe0")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.779167
+anchor_right = 1.0
+anchor_bottom = 0.845833
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_l7ner")
+alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Restart" type="Button" parent="Background/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+icon = ExtResource("2_gk1vd")
+icon_alignment = 1
+
+[node name="Home" type="Button" parent="Background/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("3_cydb7")
+icon_alignment = 1
+
+[node name="Forward" type="Button" parent="Background/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+icon = ExtResource("4_4ow5g")
+icon_alignment = 1
+
+[connection signal="pressed" from="Background/HBoxContainer/Restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="Background/HBoxContainer/Home" to="." method="_on_home_pressed"]
+[connection signal="pressed" from="Background/HBoxContainer/Forward" to="." method="_on_forward_pressed"]
