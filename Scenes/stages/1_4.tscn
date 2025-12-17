@@ -56,4 +56,4 @@ region_rect = Rect2(0, 0, 9840, 1080)
 position = Vector2(897, -229)
 duration_time = 1
 pos_attack2 = Vector2(100, -229)
-move_stop_point_x = -6690
+move_stop_point_x = 300
