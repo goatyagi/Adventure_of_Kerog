@@ -4,10 +4,10 @@ extends RigidBody2D
 @onready var hitbox: CollisionShape2D = $"DetectArea/CollisionShape2D"
 @onready var timer: Timer = $"InvincibleTimer"
 
-@export var ball_blue: CompressedTexture2D = preload("res://assets/ball_blue.png")
-@export var ball_green: CompressedTexture2D = preload("res://assets/ball_green.png")
-@export var ball_yellow: CompressedTexture2D = preload("res://assets/ball_yellow.png")
-@export var ball_red: CompressedTexture2D = preload("res://assets/ball_red.png")
+@export var ball_blue: CompressedTexture2D = preload("res://assets/Balls/ball_blue.png")
+@export var ball_green: CompressedTexture2D = preload("res://assets/Balls/ball_green.png")
+@export var ball_yellow: CompressedTexture2D = preload("res://assets/Balls/ball_yellow.png")
+@export var ball_red: CompressedTexture2D = preload("res://assets/Balls/ball_red.png")
 
 @export var scroll_speed = 5
 
